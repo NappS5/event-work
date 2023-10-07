@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+/* ruff */
+
+
+.welcome-container {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.welcome {
+  font-family: 'Secular One';
+  color: #fff;
+}
+
+.newEvent {
+  font-family: 'Oswald', sans-serif;
+  margin-top: 20px;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+  padding: 0 15px;
+  cursor: pointer;
+  font-weight: 400;
+  box-shadow: 0px 0px 10px 0px rgba(88, 87, 87, 0.682);
+  transition: 0.5s;
+}
+
+.newEvent:hover {
+  box-shadow: 0px 0px 15px 5px rgba(149, 148, 148, 0.7);
+}
+
+.container {
+  background-color: #11571e;
+  height: 400px;
+  width: 700px;
+  margin: 0 auto; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.title {
+  font-family: 'Secular One';
+  color: #c2ee23;
+  margin-bottom: 20px; 
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; 
+}
+
+.input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.submit {
+  background-color: #21b711;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+
+
+footer {
+  position: fixed; /* Fixa o footer na parte inferior da janela do navegador */
+  bottom: 0; /* Coloca o footer no fundo da janela */
+  width: 100%;
+  color: #f5f5f5;
+  font-family: 'Secular One';
+  background-color: #0e0c0c;
+  font-size: 16px;
+  padding: 8px 0;
+  font-weight: 400;
+}
+
+#footer_copyright {
+  display: flex;
+  justify-content: center;
+  background-color: #0e0c0c;
+  font-size: 0.9rem;
+  padding: 1.5rem;
+  font-weight: 400;
+}
+
+
+/* Estilos para telas maiores (desktop) */
+.welcome-container {
+  margin-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.container {
+  background-color: #11571e;
+  max-width: 700px; /* Defina uma largura máxima para o container */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilos para telas menores (dispositivos móveis) */
+@media (max-width: 768px) {
+  .welcome-container {
+    margin-top: 40px;
+    padding: 20px; /* Adicione um espaçamento interno */
+  }
+
+  .container {
+    max-width: 90%; /* Use uma largura máxima menor */
+  }
+
+  .newEvent {
+    margin-top: 10px;
+  }
+
+  .input,
+  .submit {
+    padding: 8px;
+  }
+}
+
