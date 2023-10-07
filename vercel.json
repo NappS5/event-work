@@ -1,5 +1,9 @@
 {
-    "versions": 2,
+    "versions": [
+        {
+            "version": 2
+          }
+    ],
     "builds": [
         {
             "buildCommand": "next build"
