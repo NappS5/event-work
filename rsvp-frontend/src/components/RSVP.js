@@ -8,7 +8,7 @@ function RSVP({ match }) {
     useEffect(() => {
         const fetchEvent = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:3001/event/${match.params.id}`);
+                const response = await axios.get(`https://a192-186-216-254-122.ngrok-free.app/event/${match.params.id}`);
                 setEvent(response.data);
             } catch (error) {
                 console.error("Error fetching event:", error);
@@ -20,7 +20,7 @@ function RSVP({ match }) {
 
     const handleRSVP = async () => {
         try {
-            await axios.post(`http://127.0.0.1:3001/rsvp/${match.params.id}`, { attendeeName: name });
+            await axios.post(`https://a192-186-216-254-122.ngrok-free.app/rsvp/${match.params.id}`, { attendeeName: name });
             alert('RSVP successful!');
             window.location.reload();
         } catch (error) {

@@ -176,7 +176,6 @@ footer {
 
 
 
-
 @media (max-width: 768px) {
   body {
     background-size: 300%;
@@ -196,9 +195,28 @@ footer {
     margin-top: 10px;
   }
 
-  .input,
-  .submit {
+  .input, .submit {
     padding: 8px;
+    width: 80%;
+  }
+
+  .confirm {
+    width: 290px;
+  }
+
+}
+
+@media(max-width: 480px) {
+  .confirm {
+    width: 270px;
+    font-size: 15px;
+  }
+
+  .confirm-button {
+    width: 60px;
+    height: 20px;
+    font-size: 11px;
+    padding-bottom: 20px ;
   }
 }
 
