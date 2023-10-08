@@ -110,6 +110,37 @@
 
 }
 
+.confirm {
+  width: 300px;
+  background-color: #f2f2f2;
+  box-shadow: 1px 4px 10px rgba(0,0,0,0.2);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 15px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.confirm-button {
+    background-color: #000000;
+    height: 30px;
+    width: 70px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 5px 10px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.4s ease;
+  }
+  
+  .confirm-button:hover {
+    opacity: 0.8;
+  }
+
 
 
 footer {
