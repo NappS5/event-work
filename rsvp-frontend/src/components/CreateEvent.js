@@ -1,4 +1,3 @@
-import { Redirect } from 'react-router-dom';
 import React, { useState } from 'react';
 import axios from 'axios';
 
@@ -7,7 +6,8 @@ function CreateEvent() {
     const [date, setDate] = useState('');
     const [maxRSVPs, setMaxRSVPs] = useState('');
     const [response, setResponse] = useState(null); // Inicialmente, response é null
-    
+
+
 
     // Estado para controlar a exibição da mensagem de confirmação
     const [showConfirmation, setShowConfirmation] = useState(false);
@@ -15,7 +15,7 @@ function CreateEvent() {
     const [confirmationMessage, setConfirmationMessage] = useState('');
     // Estado para controlar se o evento foi criado com sucesso
     const [eventCreated, setEventCreated] = useState(false);
-    
+
 
     // Estado para controlar se o texto deve ser clicável
     const [isTextClickable, setIsTextClickable] = useState(false);
@@ -48,7 +48,6 @@ function CreateEvent() {
             // Defina a resposta no estado
             setResponse(response);
             setIsTextClickable(true); // Tornar o texto clicável
-            setEventCreated(true);
         } catch (error) {
             console.error("Error creating the event:", error);
         }
@@ -117,7 +116,6 @@ function CreateEvent() {
                     {eventCreated && (
                         <p className={`click-copy ${showClickToCopy ? 'show-copy-text' : ''}`}>Click to copy</p>
                     )}
-                    {eventCreated && <Redirect to="/event/eventId" />}
                 </form>
             </div>
         </>

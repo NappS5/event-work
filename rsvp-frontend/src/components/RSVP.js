@@ -24,7 +24,7 @@ function RSVP({ match }) {
         try {
             await axios.post(`http://127.0.0.1:3001/rsvp/${match.params.id}`, { attendeeName: name });
             alert('RSVP successful!', handleRSVP);
-            window.location.reload();     
+            window.location.reload();
         } catch (error) {
             console.error("Error with RSVP:", error);
         }
@@ -33,18 +33,24 @@ function RSVP({ match }) {
     if (!event) return <div>Loading...</div>;
 
     return (
-        <div>
-            <h2 className='title-rsvp'>RSVP to {event.title}</h2>
+        <div className='rsvp-container'>
+            <h2 id='title-rsvp'>RSVP to {event.title}</h2>
             <p className='title-rsvp'>Date: {new Date(event.date).toLocaleDateString()}</p>
             <p className='title-rsvp'>Available Slots: {event.maxRSVPs - event.currentRSVPs}</p>
 
-            <input className='input-rsvp'
-                type="text"
-                placeholder="Your Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-            />
-            <button className='submit' onClick={handleRSVP}>RSVP</button>
+            {event.currentRSVPs >= event.maxRSVPs ? (
+                <p className='event-full'>Event is full</p>
+            ) : (
+                <>
+                    <input className='input-rsvp'
+                        type="text"
+                        placeholder="Your Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
+                    <button className='submit-rsvp' onClick={handleRSVP}>RSVP</button>
+                </>
+            )}
         </div>
     );
 }

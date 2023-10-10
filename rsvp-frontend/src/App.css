@@ -75,11 +75,25 @@
   margin-bottom: 20px; 
 }
 
-.title-rsvp {
+.rsvp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+#title-rsvp {
+  font-size: 50px;
   font-family: 'Secular One';
+}
+
+.title-rsvp {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  height: 40px;
   color: #000000;
-  margin-bottom: 5px; 
-  margin-top: 10px;
+  margin-top: 7px;
 }
 
 .link-rsvp {
@@ -96,6 +110,12 @@
   border-radius: 5px;
   font-size: 16px;
   font-family: Arial, sans-serif;
+}
+
+.event-full {
+  font-family: 'Secular One';
+  font-size: 25px;
+  color: #ff0000;
 }
 
 .tooltip{
@@ -148,7 +168,21 @@
   background-color: #000000d7;
   color: #fff;
   box-shadow: 0px 0px 15px 5px rgba(149, 148, 148, 0.7);
+}
 
+.submit-rsvp {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-rsvp:hover {
+  font-size: 18px;
 }
 
 .confirm {
