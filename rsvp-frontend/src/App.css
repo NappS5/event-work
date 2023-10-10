@@ -58,7 +58,7 @@
 
 .container {
   background-color: #5e5b5b;
-  height: 400px;
+  height: 500px;
   width: 700px;
   margin: 100px auto; 
   display: flex;
@@ -75,6 +75,46 @@
   margin-bottom: 20px; 
 }
 
+.title-rsvp {
+  font-family: 'Secular One';
+  color: #000000;
+  margin-bottom: 5px; 
+  margin-top: 10px;
+}
+
+.link-rsvp {
+  font-family: 'Secular One';
+  font-size: 12px;
+  padding-right: 5px;
+}
+
+.input-rsvp {
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.tooltip{
+  color: #fff;
+  position: relative;
+  top: 20px;
+  padding: 6px 8px;
+  background: rgb(15, 15, 15);
+  text-align: center;
+  font-size: 16px;
+  border-radius: 16px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+.hide{
+  display: none;
+}
 .inputs {
   display: flex;
   flex-direction: column;
@@ -91,6 +131,7 @@
   font-size: 16px;
   font-family: Arial, sans-serif;
 }
+
 
 .submit {
   background-color: #000000;
@@ -111,7 +152,7 @@
 }
 
 .confirm {
-  width: 300px;
+  width: 320px;
   background-color: #f2f2f2;
   box-shadow: 1px 4px 10px rgba(0,0,0,0.2);
   height: 50px;
@@ -140,6 +181,12 @@
   .confirm-button:hover {
     opacity: 0.8;
   }
+
+  .show-copy-text {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
 
 
 
@@ -204,19 +251,28 @@ footer {
     width: 290px;
   }
 
+  .link-rsvp {
+    width: 60%;
+  }
+
+
 }
 
 @media(max-width: 480px) {
+  .container {
+    max-width: 80%;
+  }
   .confirm {
     width: 270px;
     font-size: 15px;
   }
 
   .confirm-button {
-    width: 60px;
-    height: 20px;
+    width: 40px;
+    height: 15px;
     font-size: 11px;
     padding-bottom: 20px ;
+    padding-right: 13px;
   }
 }
 
