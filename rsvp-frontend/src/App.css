@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@300;400&display=swap');
 
 .App {
   text-align: center;
@@ -84,7 +85,7 @@
 }
 
 #title-rsvp {
-  font-size: 50px;
+  font-size: 35px;
   font-family: 'Secular One';
 }
 
@@ -94,6 +95,16 @@
   height: 40px;
   color: #000000;
   margin-top: 7px;
+}
+
+.subtitle {
+  color: #848383;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 30px;
+}
+.subtitle:hover {
+  color: #1f1919;
+  cursor: pointer;
 }
 
 .link-rsvp {

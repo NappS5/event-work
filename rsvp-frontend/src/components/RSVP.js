@@ -34,7 +34,7 @@ function RSVP({ match }) {
 
     return (
         <div className='rsvp-container'>
-            <h2 id='title-rsvp'>RSVP to {event.title}</h2>
+            <h2 id='title-rsvp'>RSVP to : <span className='subtitle'>{event.title}</span></h2>
             <p className='title-rsvp'>Date: {new Date(event.date).toLocaleDateString()}</p>
             <p className='title-rsvp'>Available Slots: {event.maxRSVPs - event.currentRSVPs}</p>
 
