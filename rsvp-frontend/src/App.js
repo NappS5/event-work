@@ -5,12 +5,7 @@ import Home from './components/Home';
 import CreateEvent from './components/CreateEvent';
 import RSVP from './components/RSVP';
 
-import { useParams } from 'react-router-dom';
 
-function EventPage() {
-  const { eventId } = useParams();
-  // Fetch and display event details based on eventId
-}
 
 
 function App() {

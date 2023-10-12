@@ -93,7 +93,10 @@ function CreateEvent() {
                         type="number"
                         placeholder="Max of RSVPs"
                         value={maxRSVPs}
-                        onChange={(e) => setMaxRSVPs(e.target.value)}
+                        onChange={(e) => {
+                            const newValue = Math.max(0, parseInt(e.target.value, 10));
+                            setMaxRSVPs(newValue);
+                            }}
                     />
                     <button className='submit' type="submit">Create Event</button>
 

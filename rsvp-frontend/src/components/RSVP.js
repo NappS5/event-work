@@ -4,6 +4,8 @@ import axios from 'axios';
 function RSVP({ match }) {
     const [event, setEvent] = useState(null);
     const [name, setName] = useState('');
+    const [participants, setParticipants] = useState([]);
+
 
     useEffect(() => {
         const fetchEvent = async () => {
@@ -24,13 +26,14 @@ function RSVP({ match }) {
         try {
             await axios.post(`http://127.0.0.1:3001/rsvp/${match.params.id}`, { attendeeName: name });
             alert('RSVP successful!', handleRSVP);
+            setParticipants([...participants, name]);
             window.location.reload();
         } catch (error) {
             console.error("Error with RSVP:", error);
         }
     };
 
-    if (!event) return <div>Loading...</div>;
+    if (!event) return <div>Loading...</div>;   
 
     return (
         <div className='rsvp-container'>
@@ -39,8 +42,16 @@ function RSVP({ match }) {
             <p className='title-rsvp'>Available Slots: {event.maxRSVPs - event.currentRSVPs}</p>
 
             {event.currentRSVPs >= event.maxRSVPs ? (
-                <p className='event-full'>Event is full</p>
-            ) : (
+                 <>
+                 <p className='event-full'>Event is full</p>
+                 <h3>List of Participants:</h3>
+                 <ul>
+                     {participants.map((participant, index) => (
+                         <li key={index}>{participant}</li>
+                     ))}
+                 </ul>
+             </>
+         ) : (
                 <>
                     <input className='input-rsvp'
                         type="text"
