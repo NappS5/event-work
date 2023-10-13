@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function CreateEvent() {
@@ -51,7 +51,10 @@ function CreateEvent() {
         } catch (error) {
             console.error("Error creating the event:", error);
         }
+        
     };
+
+
 
     const handleTextClick = () => {
         if (isTextClickable && response) {
@@ -70,7 +73,9 @@ function CreateEvent() {
         setShowConfirmation(false);
         // Oculte o "Click to copy" após o botão "Confirm" ser clicado
         setShowClickToCopy(false);
+        setEventCreated(false);
     };
+
 
     return (
         <>

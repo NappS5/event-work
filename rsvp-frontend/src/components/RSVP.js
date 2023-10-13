@@ -6,6 +6,16 @@ function RSVP({ match }) {
     const [name, setName] = useState('');
     const [participants, setParticipants] = useState([]);
 
+    const fetchRSVPs = async () => {
+        try {
+            const response = await axios.get(`http://127.0.0.1:3001/event/${match.params.id}/rsvps`, {
+                headers: { 'ngrok-skip-browser-warning': 'true' }
+            });
+            setParticipants(response.data);
+        } catch (error) {
+            console.error("Error fetching event:", error);
+        }
+    };
 
     useEffect(() => {
         const fetchEvent = async () => {
@@ -19,9 +29,11 @@ function RSVP({ match }) {
             }
         };
 
+        fetchRSVPs();
+
         fetchEvent();
     }, [match.params.id]);
-
+    console.log(participants);
     const handleRSVP = async () => {
         try {
             await axios.post(`http://127.0.0.1:3001/rsvp/${match.params.id}`, { attendeeName: name });

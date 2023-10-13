@@ -57,6 +57,18 @@ app.get('/event/:eventId', async (req, res) => {
     }
 });
 
+app.get('/event/:eventId/rsvps', async (req, res) => {
+    try {
+        const rsvps = await RSVP.find({eventId:req.params.eventId});
+        if (!rsvps) return res.status(404).json({ message: 'RSVPs not found' });
+        res.json(rsvps);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
+
+
 // POST endpoint to RSVP to a specific event
 app.post('/rsvp/:eventId', async (req, res) => {
     try {
