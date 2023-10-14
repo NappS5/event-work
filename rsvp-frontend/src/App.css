@@ -11,9 +11,6 @@
   pointer-events: none;
 }
 
-/* ruff */
-
-
 .welcome-container {
   margin-top: 80px;
   display: flex;
@@ -76,85 +73,6 @@
   margin-bottom: 20px; 
 }
 
-.rsvp-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin-top: 20px;
-}
-
-.date-slots {
-  display: flex;
-  flex-direction:row;
-}
-
-#title-rsvp {
-  font-size: 35px;
-  font-family: 'Secular One';
-}
-
-.title-rsvp {
-  font-family: 'Oswald', sans-serif;
-  font-size: 20px;
-  height: 40px;
-  color: #000000;
-  margin-top: 7px;
-}
-
-.subtitle {
-  color: #848383;
-  font-family: 'Yanone Kaffeesatz', sans-serif;
-  font-size: 30px;
-}
-.subtitle:hover {
-  color: #1f1919;
-}
-
-.subtitle-date {
-  color: #3e3c3c;
-}
-
-
-.link-rsvp {
-  font-family: 'Secular One';
-  font-size: 12px;
-  padding-right: 5px;
-}
-
-.input-rsvp {
-  width: 30%;
-  padding: 10px;
-  margin-bottom: 0px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
-}
-
-.event-full {
-  font-family: 'Secular One';
-  font-size: 25px;
-  color: #ff0000;
-}
-
-.tooltip{
-  color: #fff;
-  position: relative;
-  top: 20px;
-  padding: 6px 8px;
-  background: rgb(15, 15, 15);
-  text-align: center;
-  font-size: 16px;
-  border-radius: 16px;
-  visibility: hidden;
-  opacity: 0;
-  transition: all .5s ease-in-out;
-}
-
-.hide{
-  display: none;
-}
 .inputs {
   display: flex;
   flex-direction: column;
@@ -183,27 +101,10 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
 .submit:hover {
   background-color: #000000d7;
   color: #fff;
   box-shadow: 0px 0px 15px 5px rgba(149, 148, 148, 0.7);
-}
-
-.submit-rsvp {
-  background-color: #000000;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.submit-rsvp:hover {
-  background-color: #fff;
-  color: #000;
 }
 
 .confirm {
@@ -243,13 +144,89 @@
     font-weight: 700;
 }
 
+.link-rsvp {
+  font-family: 'Secular One';
+  font-size: 12px;
+  padding-right: 5px;
+}
+
+.rsvp-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+#title-rsvp {
+  font-size: 35px;
+  font-family: 'Secular One';
+}
+
+.title-rsvp {
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  height: 40px;
+  color: #000000;
+  margin-top: 7px;
+}
+
+.subtitle {
+  color: #848383;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 30px;
+}
+.subtitle:hover {
+  color: #1f1919;
+}
+
+.date-slots {
+  display: flex;
+  flex-direction:row;
+}
+
+.subtitle-date {
+  color: #3e3c3c;
+}
+
+.input-rsvp {
+  width: 30%;
+  padding: 10px;
+  margin-bottom: 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+.submit-rsvp {
+  background-color: #000000;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-rsvp:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.event-full {
+  font-family: 'Secular One';
+  font-size: 25px;
+  color: #ff0000;
+}
+
 .list-participants {
   font-family: 'Secular One';
   font-size: 30px;
   margin-top: 5px;
   color: #242323;
 }
-
 
 .participants-container {
   background-color: #5e5b5b;
@@ -264,7 +241,6 @@
   color: #fff;
   font-size: 18px;
 }
-
 
 .name-list {
   font-family: 'Oswald', sans-serif;
@@ -282,8 +258,8 @@
 }
 
 footer {
-  position: fixed; /* Fixa o footer na parte inferior da janela do navegador */
-  bottom: 0; /* Coloca o footer no fundo da janela */
+  position: fixed; 
+  bottom: 0; 
   width: 100%;
   color: #f5f5f5;
   font-family: 'Secular One';
@@ -303,7 +279,7 @@ footer {
 }
 
 
-/* Estilos para telas maiores (desktop) */
+
 .welcome-container {
   margin-top: 80px;
   display: flex;
@@ -356,7 +332,6 @@ footer {
   .name-list {
     max-width: 100vw;
   }
-
 
 }
 
