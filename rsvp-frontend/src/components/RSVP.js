@@ -6,21 +6,24 @@ function RSVP({ match }) {
     const [name, setName] = useState('');
     const [participants, setParticipants] = useState([]);
 
-    const fetchRSVPs = async () => {
-        try {
-            const response = await axios.get(`http://127.0.0.1:3001/event/${match.params.id}/rsvps`, {
-                headers: { 'ngrok-skip-browser-warning': 'true' }
-            });
-            setParticipants(response.data);
-        } catch (error) {
-            console.error("Error fetching event:", error);
-        }
-    };
+    
+   
 
     useEffect(() => {
+        const fetchRSVPs = async () => {
+            try {
+                const response = await axios.get(`https://9e19-189-28-216-61.ngrok-free.app/event/${match.params.id}/rsvps`, {
+                    headers: { 'ngrok-skip-browser-warning': 'true' }
+                });
+                setParticipants(response.data);
+            } catch (error) {
+                console.error("Error fetching event:", error);
+            }
+        };
+
         const fetchEvent = async () => {
             try {
-                const response = await axios.get(`http://127.0.0.1:3001/event/${match.params.id}`, {
+                const response = await axios.get(`https://9e19-189-28-216-61.ngrok-free.app/event/${match.params.id}`, {
                     headers: { 'ngrok-skip-browser-warning': 'true' }
                 });
                 setEvent(response.data);
@@ -36,9 +39,8 @@ function RSVP({ match }) {
     console.log(participants);
     const handleRSVP = async () => {
         try {
-            await axios.post(`http://127.0.0.1:3001/rsvp/${match.params.id}`, { attendeeName: name });
-            alert('RSVP successful!', handleRSVP);
-            setParticipants([...participants, name]);
+            await axios.post(`https://9e19-189-28-216-61.ngrok-free.app/rsvp/${match.params.id}`, { attendeeName: name });
+            
             window.location.reload();
         } catch (error) {
             console.error("Error with RSVP:", error);
@@ -50,18 +52,16 @@ function RSVP({ match }) {
     return (
         <div className='rsvp-container'>
             <h2 id='title-rsvp'>RSVP to : <span className='subtitle'>{event.title}</span></h2>
-            <p className='title-rsvp'>Date: {new Date(event.date).toLocaleDateString()}</p>
-            <p className='title-rsvp'>Available Slots: {event.maxRSVPs - event.currentRSVPs}</p>
+            <div className='date-slots'>
+            <p className='title-rsvp'>Date: <span className='subtitle-date'>{new Date(event.date).toLocaleDateString()}</span> /</p>
+            <p className='title-rsvp'> Available Slots: <span className='subtitle-date'>{event.maxRSVPs - event.currentRSVPs}</span></p>
+            </div>
+
+            
 
             {event.currentRSVPs >= event.maxRSVPs ? (
                  <>
                  <p className='event-full'>Event is full</p>
-                 <h3>List of Participants:</h3>
-                 <ul>
-                     {participants.map((participant, index) => (
-                         <li key={index}>{participant}</li>
-                     ))}
-                 </ul>
              </>
          ) : (
                 <>
@@ -74,6 +74,16 @@ function RSVP({ match }) {
                     <button className='submit-rsvp' onClick={handleRSVP}>RSVP</button>
                 </>
             )}
+        <h3 className='list-participants'>List of Participants:</h3>
+            <div className='participants-container'>
+                 <p className='people-list'> These are the people that are Participating on your Event!
+                     {participants.map((participant, index) => (
+                        <div className='name-list'>
+                            <span key={index}>{participant.attendeeName}</span><br/>
+                        </div>
+                     ))}
+                 </p>
+            </div>
         </div>
     );
 }
