@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors'); // Importe o pacote cors
 
+const app = express();
 
 
 dotenv.config();
@@ -11,12 +12,9 @@ const corsOptions = {
     origin: "https://rsvp-app-frontend.onrender.com", // frontend URI (ReactJS)
 }
 
+const PORT = process.env.PORT || 3001;
 app.use(express.json());
 app.use(cors(corsOptions));
-
-const app = express();
-const PORT = process.env.PORT || 3001;
-app.use(cors());
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
