@@ -12,7 +12,7 @@ function RSVP({ match }) {
     useEffect(() => {
         const fetchRSVPs = async () => {
             try {
-                const response = await axios.get(`https://rsvp-app-frontend.onrender.com/event/${match.params.id}/rsvps`, {
+                const response = await axios.get(`http://localhost:3001/event/${match.params.id}/rsvps`, {
                     headers: { 'ngrok-skip-browser-warning': 'true' }
                 });
                 setParticipants(response.data);
@@ -23,7 +23,7 @@ function RSVP({ match }) {
 
         const fetchEvent = async () => {
             try {
-                const response = await axios.get(`https://rsvp-app-frontend.onrender.com/event/${match.params.id}`, {
+                const response = await axios.get(`http://localhost:3001/event/${match.params.id}`, {
                     headers: { 'ngrok-skip-browser-warning': 'true' }
                 });
                 setEvent(response.data);
@@ -39,7 +39,7 @@ function RSVP({ match }) {
     console.log(participants);
     const handleRSVP = async () => {
         try {
-            await axios.post(`https://rsvp-app-frontend.onrender.com/rsvp/${match.params.id}`, { attendeeName: name });
+            await axios.post(`http://localhost:3001/rsvp/${match.params.id}`, { attendeeName: name });
             
             window.location.reload();
         } catch (error) {
