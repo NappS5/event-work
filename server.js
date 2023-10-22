@@ -7,6 +7,13 @@ const cors = require('cors'); // Importe o pacote cors
 
 dotenv.config();
 
+const corsOptions = {
+    origin: "https://rsvp-app-frontend.onrender.com", // frontend URI (ReactJS)
+}
+
+app.use(express.json());
+app.use(cors(corsOptions));
+
 const app = express();
 const PORT = process.env.PORT || 3001;
 app.use(cors());
