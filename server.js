@@ -1,12 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
-const cors = require('cors'); // Importe o pacote cors
-
 const app = express();
-
-
-dotenv.config();
+const cors = require('cors'); // Importe o pacote cors
+require("dotenv").config();
 
 const corsOptions = {
     origin: "https://rsvp-app-frontend.onrender.com", // frontend URI (ReactJS)
