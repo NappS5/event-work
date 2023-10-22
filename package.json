@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "install-server": "npm install",
-    "start-server": "cd rsvp-backend && node app.js",
+    "start-server": "node app.js",
     "install-client": "cd rsvp-frontend && npm install",
     "build-client": "cd rsvp-frontend && npm run build",
     "start-client": "cd rsvp-frontend && npm run start"
