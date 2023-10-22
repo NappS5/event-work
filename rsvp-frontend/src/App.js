@@ -11,11 +11,11 @@ import RSVP from './components/RSVP';
 function App() {
   const [message, setMessage] = useState("");
 
-  // useEffect(() => {
-  //   fetch("https://rsvp-app-iket.onrender.com")
-  //   .then((res) => res.json())
-  //   .then((data) => setMessage(data.message));
-  // },[]);
+  useEffect(() => {
+    fetch("https://rsvp-app.onrender.com")
+    .then((res) => res.json())
+    .then((data) => setMessage(data.message));
+  },[]);
 
   return (
     <Router>
