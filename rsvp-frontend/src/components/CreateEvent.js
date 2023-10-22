@@ -39,11 +39,11 @@ function CreateEvent() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:3001/event', { title, date, maxRSVPs });
+            const response = await axios.post('https://rsvp-app.onrender.com/event', { title, date, maxRSVPs });
 
             // Atualize o estado para exibir a mensagem de confirmação
             setShowConfirmation(true);
-            setConfirmationMessage(`Put the link into your search bar: http://localhost:3000/rsvp/${response.data._id}`);
+            setConfirmationMessage(`Put the link into your search bar: https://rsvp-app-frontend.onrender.com/rsvp/${response.data._id}`);
             setEventCreated(true); // Atualize o estado para indicar que o evento foi criado com sucesso
 
             // Defina a resposta no estado
@@ -60,7 +60,7 @@ function CreateEvent() {
     const handleTextClick = () => {
         if (isTextClickable && response) {
             // Chame a função copy_rsvp com o URL RSVP apenas se o texto for clicável e a resposta existir
-            copy_rsvp(`http://localhost:3000/rsvp/${response.data._id}`);
+            copy_rsvp(`https://rsvp-app-frontend.onrender.com/rsvp/${response.data._id}`);
         }
     };
 
@@ -112,7 +112,7 @@ function CreateEvent() {
                                 style={{ cursor: isTextClickable ? 'pointer' : 'default', textDecoration: isTextClickable ? 'underline' : 'none' }}
                                 onClick={handleTextClick}
                             >
-                                {`http://localhost:3000/rsvp/${response ? response.data._id : ''}`}
+                                {`https://rsvp-app-frontend.onrender.com/rsvp/${response ? response.data._id : ''}`}
                             </p>
 
                             {eventCreated && (
