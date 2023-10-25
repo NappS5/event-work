@@ -39,7 +39,7 @@ function CreateEvent() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('https://rsvp-app.onrender.com/event', { title, date, maxRSVPs });
+            const response = await axios.post('https://rsvp-app-backend.onrender.com/event', { title, date, maxRSVPs });
 
             // Atualize o estado para exibir a mensagem de confirmação
             setShowConfirmation(true);
